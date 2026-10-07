@@ -1,48 +1,40 @@
+# Demographic & Economic Data Analysis
 
-# US Census Data Analysis
+**Python • Exploratory analysis • Data visualization • Simulated educational data**
 
-This project explores demographic and economic data from the U.S. Census to uncover insights related to income, poverty, education level, and population distribution across different states.
+A Python case study comparing income and exploring relationships between income, poverty, and education across five state-level records.
 
-## 🎯 Objectives
+## Problem
 
-- Analyze average income per state
-- Visualize poverty and education rates
-- Understand correlations between income, education, and poverty
+How can a demographic and economic dataset be summarized and visualized to support clear analytical questions? This project demonstrates an EDA workflow, with careful limits on interpreting a very small sample.
 
-## 📁 Project Structure
+## Data
 
-```
-US-Census-Data-Analysis/
-│
-├── data/
-│   └── us_census.csv
-├── notebooks/
-│   └── census_analysis.ipynb
-├── images/
-│   └── income_by_state.png
-├── README.md
-└── requirements.txt
-```
+[us_census.csv](us_census.csv) contains fields for `State`, `Income`, `Population`, `Poverty`, and `Bachelor_or_Higher`. The notebook's recorded output contains **five rows**.
 
-## 🛠 Tools Used
+**The original README explicitly labels the data as simulated for educational purposes. It is not presented here as an authenticated U.S. Census extract.** For an analysis using official statistics, obtain and document an appropriate source from [data.census.gov](https://data.census.gov).
 
-- Python
-- Pandas
-- Matplotlib
-- Seaborn
-- Jupyter Notebook (Google Colab compatible)
+## Methodology
 
-## 📈 Sample Visualizations
+1. Load the CSV and strip whitespace from column names.
+2. Inspect data types and descriptive statistics with `info()` and `describe()`.
+3. Sort the records by income and create a bar chart.
+4. Calculate Pearson correlations for income, poverty, and bachelor's-degree attainment and display a heatmap.
 
-- Bar plots for income by state
-- Heatmap for correlation between income, education, and poverty
+## Technologies
 
-## 📌 Future Improvements
+**Python, Pandas, Matplotlib, Seaborn, Jupyter / Google Colab.**
 
-- Add interactive dashboards (e.g., Streamlit)
-- Expand analysis to all 50 states
-- Include time series data
+## Analysis and results
 
----
+The recorded summary reports income values from **59,606 to 75,277**, with a mean of **66,459.4**, in the five-row example. The bar chart compares income across records; the heatmap summarizes associations among the three selected variables.
 
-*Data Source: Simulated for educational purposes. For real data, visit [data.census.gov](https://data.census.gov).*
+These values describe the educational dataset only. Five simulated observations cannot support population-level conclusions, causal claims, or policy recommendations. No interactive dashboard is included in the repository.
+
+## Explore and reproduce
+
+Open [US_Census_Data_Analysis.ipynb](US_Census_Data_Analysis.ipynb). In Google Colab, upload `us_census.csv` to `/content/`, matching the notebook's current input path, then run the analysis cells. The actual repository stores the notebook, CSV, and `requirements.txt` at the root.
+
+## Possible extensions
+
+Use a documented official dataset, expand coverage, and add a Power BI dashboard. These are proposed extensions, not implemented features.
